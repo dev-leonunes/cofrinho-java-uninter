@@ -9,7 +9,7 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         int opcaoTarefa = 0;
 
-        while (opcaoTarefa != 5) {
+        while (opcaoTarefa != 0) {
             try {
                 menuPrincipal();
                 opcaoTarefa = scanner.nextInt();
@@ -35,6 +35,9 @@ public class App {
                                 break;
                             case 3:
                                 moeda = new Real(valor);
+                                break;
+                            case 4:
+                                moeda = new Peso(valor);
                                 break;
                             default:
                                 System.out.println("Opcao invalida");
@@ -63,6 +66,9 @@ public class App {
                                 break;
                             case 3:
                                 moedaRemover = new Real(valorMoeda);
+                                break;
+                            case 4:
+                                moedaRemover = new Peso(valorMoeda);
                                 break;
                             default:
                                 System.out.println("\nOpcao invalida");
@@ -103,7 +109,7 @@ public class App {
                         cofrinho.totalConvertido();
                         System.out.println("--------------------");
                         break;
-                    case 5:
+                    case 0:
                         System.out.println("\nSaindo...");
                         break;
                     default:
@@ -127,7 +133,7 @@ public class App {
         System.out.println("2 - Remover moeda");
         System.out.println("3 - Listar moedas");
         System.out.println("4 - Total convertido");
-        System.out.println("5 - Sair");
+        System.out.println("0 - Sair");
         System.out.print("Escolha uma opcao: ");
     }
 
@@ -136,7 +142,8 @@ public class App {
         System.out.println("1 - Real");
         System.out.println("2 - Dolar");
         System.out.println("3 - Euro");
-        System.out.println("4 - Sair");
+        System.out.println("4 - Peso Argentino");
+        System.out.println("0 - Sair");
         System.out.print("Escolha uma opcao: ");
     }
 
@@ -144,6 +151,7 @@ public class App {
         System.out.println("1 - Dolar");
         System.out.println("2 - Euro");
         System.out.println("3 - Real");
+        System.out.println("4 - Peso Argentino");
         System.out.print("Escolha uma opcao: ");
     }
 }
